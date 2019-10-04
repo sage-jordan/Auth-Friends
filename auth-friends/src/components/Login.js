@@ -10,10 +10,10 @@ const Login = (props) => {
 const login = e => {
     e.preventDefault();
     axiosWithAuth()
-        .post('login', credentials)
+        .post('/login', credentials)
         .then(res => {
-            localStorage.setItem('token', res.data.token);
-            props.history.push('/login');
+            localStorage.setItem('token', res.data.payload);
+            props.history.push('/protected');
         })
         .catch(err => console.log('Error: ', err));
     }
