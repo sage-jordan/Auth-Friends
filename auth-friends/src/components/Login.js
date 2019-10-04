@@ -9,7 +9,7 @@ const login = e => {
     axiosWithAuth()
         .post('login', credentials)
         .then(res => {
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem(console.log('token', res.data.token));
             props.history.push('/login');
         })
         .catch(err => console.log(err));
