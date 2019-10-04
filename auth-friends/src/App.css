@@ -29,3 +29,17 @@
 li {
   list-style-type: none;
 }
+
+ul {
+  list-style-type: none;
+  padding: 10px;
+  width: 300px;
+  margin: auto;
+}
+
+li a {
+  display: block;
+  width: 300px;
+  font-size: 25px;
+  padding: 10px;
+}
