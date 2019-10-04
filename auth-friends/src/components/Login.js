@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 
 const Login = (props) => {
- const [credentials, setCredentials] = useState({});
+ const [credentials, setCredentials] = useState({
+     username: '',
+     password: ''
+ });
 
 const login = e => {
     e.preventDefault();
     axiosWithAuth()
         .post('login', credentials)
         .then(res => {
-            localStorage.setItem(console.log('token', res.data.token));
+            localStorage.setItem('token', res.data.token);
             props.history.push('/login');
         })
-        .catch(err => console.log(err));
+        .catch(err => console.log('Error: ', err));
     }
 
 const handleChange = e => {
