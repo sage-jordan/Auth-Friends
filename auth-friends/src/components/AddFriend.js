@@ -10,8 +10,11 @@ function AddFriend() {
     });
 
     const addFriend = () => {
-
-    };
+        axiosWithAuth()
+            .post('/friends', newFriend)
+            .then(res => console.log(res))
+            .catch(err => console.log('Error: ', err));
+    }
 
     const handleChange = e => {
         e.preventDefault();
