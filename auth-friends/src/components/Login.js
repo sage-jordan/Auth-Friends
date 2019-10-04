@@ -23,7 +23,7 @@ const Login = (props) => {
 
     return (
       <div>
-        <form onSubmit={props.login}>
+        <form onSubmit={login}>
           <input
             type="text"
             name="username"
