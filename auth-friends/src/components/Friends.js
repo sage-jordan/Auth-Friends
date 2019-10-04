@@ -3,6 +3,7 @@ import { Card } from 'semantic-ui-react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 import AddFriend from './AddFriend';
 import EditFriend from './EditFriend';
+import { Link } from 'react-router-dom';
 
 function Friends(){
     const [ friendsObj, setFriendsObj ] = useState([]);
@@ -23,14 +24,13 @@ function Friends(){
                 {friendsObj.map((friend) => {
                     return (
                         <div className="friend-card">
-                            <Link to={EditFriend(friend.id)}>
-                                <Card
-                                    header={friend.name}
-                                    meta={friend.age}
-                                    description={friend.email}
-                                    extra={friend.id}
-                                />
-                            </Link>
+                            <Card
+                                header={friend.name}
+                                meta={friend.age}
+                                description={friend.email}
+                                extra={friend.id}
+                                href='/edit'
+                            />
                         </div>
                     );
                 })}
