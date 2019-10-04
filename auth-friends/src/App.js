@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Router, Link } from 'react-router-dom';
 import Friends from './components/Friends';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
