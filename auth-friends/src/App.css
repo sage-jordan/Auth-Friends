@@ -21,8 +21,11 @@
   color: #09d3ac;
 }
 
-.friend-cards {
-  width: 290px;
+.cards-container {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: auto;
 }
 

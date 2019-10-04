@@ -17,18 +17,20 @@ function Friends(){
     return (
         <div>
             <h1>Friends List</h1>
-            {friendsObj.map((friend) => {
-                return (
-                    <div className="friend-cards">
-                        <Card
-                            header={friend.name}
-                            meta={friend.age}
-                            description={friend.email}
-                            extra={friend.id}
-                        />
-                    </div>
-                );
-            })}
+            <div className="cards-container">
+                {friendsObj.map((friend) => {
+                    return (
+                        <div className="friend-card">
+                            <Card
+                                header={friend.name}
+                                meta={friend.age}
+                                description={friend.email}
+                                extra={friend.id}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };
