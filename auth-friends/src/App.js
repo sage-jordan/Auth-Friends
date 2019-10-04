@@ -3,7 +3,7 @@ import './App.css';
 import { Router, Route, Link, Switch } from 'react-router-dom';
 import Friends from './components/Friends';
 import PrivateRoute from './components/PrivateRoute';
-import Login from './components/Login';
+import Login from './components/Login.js';
 
 function App() {
   return (

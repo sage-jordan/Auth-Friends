@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../path/to/module';
+import { axiosWithAuth } from '../auth/axiosWithAuth';
 
 const Login = (props) => {
  const [credentials, setCredentials] = useState({});
 
-  const login = e => {
+const login = e => {
     e.preventDefault();
-    axiosWithAuth().post('login', credentials)
-      .then(res => {
-        localStorage.setItem('token', res.data.token);
-        props.history.push('/');
-      })
-      .catch(err => console.log(err));
-  }
+    axiosWithAuth()
+        .post('login', credentials)
+        .then(res => {
+            localStorage.setItem('token', res.data.token);
+            props.history.push('/login');
+        })
+        .catch(err => console.log(err));
+    }
 
-  const handleChange = e => {
-      setCredentials({
-        ...credentials,
-        [e.target.name]: e.target.value,
-      })
+const handleChange = e => {
+    setCredentials({
+    ...credentials,
+    [e.target.name]: e.target.value,
+    })
   }
 
     return (
