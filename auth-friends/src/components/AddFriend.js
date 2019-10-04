@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { axiosWithAuth} from '../auth/axiosWithAuth';
 
 function AddFriend() {
 
     const [ newFriend, setNewFriend ] = useState({
-        id: '',
         name: '',
         age: '',
         email: '',
@@ -27,25 +27,28 @@ function AddFriend() {
     return (
         <div className="add-friend">
             <form onSubmit={addFriend}>
+                Name <br/>
                 <input
                     type="text"
                     name="name"
                     value={newFriend.name}
                     onChange={handleChange}
-                />
+                /><br/>
+                Age <br/>
                 <input
                     type="number"
                     name="age"
                     value={newFriend.age}
                     onChange={handleChange}
-                />
+                /><br/>
+                Email <br/>
                 <input
                     type="email"
                     name="email"
                     value={newFriend.email}
                     onChange={handleChange}
-                />
-                <button>Log in</button>
+                /><br/>
+                <button>Add Friend</button>
             </form>
         </div>
     )

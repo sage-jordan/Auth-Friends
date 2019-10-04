@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'semantic-ui-react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
+import AddFriend from './AddFriend';
 
 function Friends(){
     const [ friendsObj, setFriendsObj ] = useState([]);
@@ -31,6 +32,7 @@ function Friends(){
                     );
                 })}
             </div>
+            <AddFriend />
         </div>
     );
 };
