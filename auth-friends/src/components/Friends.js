@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card } from 'semantic-ui-react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 import AddFriend from './AddFriend';
+import EditFriend from './EditFriend';
 
 function Friends(){
     const [ friendsObj, setFriendsObj ] = useState([]);
@@ -14,7 +15,7 @@ function Friends(){
             })
             .catch(err => console.log('Error: ', err));
     }, [] );
-    console.log(friendsObj);
+
     return (
         <div>
             <h1>Friends List</h1>
@@ -22,12 +23,14 @@ function Friends(){
                 {friendsObj.map((friend) => {
                     return (
                         <div className="friend-card">
-                            <Card
-                                header={friend.name}
-                                meta={friend.age}
-                                description={friend.email}
-                                extra={friend.id}
-                            />
+                            <Link to={EditFriend(friend.id)}>
+                                <Card
+                                    header={friend.name}
+                                    meta={friend.age}
+                                    description={friend.email}
+                                    extra={friend.id}
+                                />
+                            </Link>
                         </div>
                     );
                 })}
