@@ -3,7 +3,6 @@ import { Card } from 'semantic-ui-react';
 import { axiosWithAuth } from '../auth/axiosWithAuth';
 import AddFriend from './AddFriend';
 import EditFriend from './EditFriend';
-import { Link } from 'react-router-dom';
 
 function Friends(){
     const [ friendsObj, setFriendsObj ] = useState([]);
@@ -29,7 +28,7 @@ function Friends(){
                                 meta={friend.age}
                                 description={friend.email}
                                 extra={friend.id}
-                                href='/edit'
+                                href='/protected/edit'
                             />
                         </div>
                     );
