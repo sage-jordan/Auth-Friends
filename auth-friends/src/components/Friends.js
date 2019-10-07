@@ -29,7 +29,6 @@ function Friends(){
                                 meta={friend.age}
                                 description={friend.email}
                                 extra={friend.id}
-                                href='/edit'
                             />
                         </div>
                     );
