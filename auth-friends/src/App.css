@@ -45,3 +45,12 @@ li a {
   font-size: 25px;
   padding: 10px;
 }
+
+a {
+  color: black;
+}
+
+.App {
+  background: #09d3ac;
+  height: 9 00px;
+}
